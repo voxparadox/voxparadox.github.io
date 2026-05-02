@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox">
+  <meta name="keywords" content="VoxParadox, Audio LLMs, Speech LLMs, ICML 2026, Paralinguistics, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VoxParadox | ICML 2026</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item icml-nav-brand" href="https://icml.cc/" target="_blank" rel="noopener" title="ICML 2026">
+      <img src="static/images/icml-navbar-logo.svg" alt="ICML 2026" class="icml-nav-logo">
+      <span class="icml-nav-text">ICML 2026</span>
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu navbar-menu-centered">
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link authors-projects-trigger">
+        <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+        <span>Other Projects</span>
+      </a>
+      <div class="navbar-dropdown is-right">
+        <a href="https://avere-iclr.github.io/" class="navbar-item" target="_blank" rel="noopener">AVERE (ICLR 2026)</a>
+        <a href="https://mod-dpo.github.io/" class="navbar-item" target="_blank" rel="noopener">MoD-DPO (CVPR 2026)</a>
+        <a href="https://face-llava.github.io/" class="navbar-item" target="_blank" rel="noopener">Face-LLaVA (WACV 2026)</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section has-text-centered" style="padding-top: 1rem; padding-bottom: 0.2rem;">
+  <div class="container is-max-desktop">
+    <img src="static/images/voxparadox_logo_small.png" alt="VoxParadox" class="vox-logo" data-fallback="static/images/voxparadox_logo.svg" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}else{this.style.display='none'; this.nextElementSibling.style.display='block';}">
+    <div class="vox-badge" style="display:none;">VoxParadox</div>
+  </div>
+</section>
+
+<section class="hero" style="padding-top: 0;">
+  <div class="hero-body" style="padding-top: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            Do Audio LLMs Listen or Read?<br>
+            Analyzing and Mitigating Paralinguistic Failures with VoxParadox
+          </h1>
+
+          <div style="margin-bottom: 1rem;">
+            <a href="https://icml.cc/" target="_blank" rel="noopener" class="conference-badge">
+              <img src="static/images/icml-navbar-logo.svg" alt="ICML" class="conference-badge-logo">
+              <span>ICML 2026</span>
+            </a>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><a href="https://jiachengpang.github.io/">Jiacheng Pang</a><sup>*</sup>,</span>
+            <span class="author-block"><a href="https://ashutoshchaubey.in/">Ashutosh Chaubey</a><sup>*</sup>,</span>
+            <span class="author-block"><a href="https://www.ihp-lab.org/">Mohammad Soleymani</a></span>
+          </div>
+          <div class="is-size-6 equal-contribution">* Equal contribution</div>
+
+          <div class="column has-text-centered" style="margin-top: 1.1rem;">
+            <div class="publication-links">
+              <span class="pub-btn pub-btn-preprint disabled">
+                <span class="pub-icon"><i class="ai ai-arxiv" style="font-size: 1.2rem;"></i></span>
+                <span>Preprint (Coming Soon)</span>
+              </span>
+              <span class="pub-btn pub-btn-benchmark disabled">
+                <span class="pub-icon"><i class="fas fa-database"></i></span>
+                <span>Benchmark (Coming Soon)</span>
+              </span>
+              <span class="pub-btn pub-btn-code disabled">
+                <span class="pub-icon"><i class="fab fa-github" style="font-size: 1.1rem;"></i></span>
+                <span>Code (Coming Soon)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="teaser-box">
+      <p class="is-size-5">
+        We evaluate modern Audio LLMs, including the AudioFlamingo series, Qwen-2-Audio, and Kimi Audio, to test whether they truly leverage acoustic cues or over-rely on semantics from speech content.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Audio large language models (Audio LLMs) demonstrate strong performance on speech understanding tasks, yet their ability to understand paralinguistic information remains limited.
+            To systematically quantify this issue, we introduce <strong>VoxParadox</strong>, an adversarial benchmark with 2,000 verified examples, spanning 10 paralinguistic tasks, created with controlled speech synthesis to intentionally mismatch transcript claims and speaking style, enabling direct measurement of speech paralinguistic understanding.
+            Evaluation of a diverse set of Audio LLMs reveals consistently low accuracy on acoustic ground truth and a strong tendency to follow language-implied (incorrect) answers.
+            To understand the cause of this gap, we perform layer-wise probing and find that (i) paralinguistic cues can degrade in deeper encoder layers and at the encoder-LLM interface, and (ii) even when such cues are available in audio tokens, the language model frequently ignores them.
+            To address these problems, we propose Prompt-Conditioned Layer Mixer (PCLM), which adaptively combines information from multiple audio layers based on the input prompt, and pair it with Direct Preference Optimization (DPO) to explicitly prefer acoustically supported options over language-implied alternatives.
+            These methods substantially improve Audio LLM paralinguistic understanding, improving Audio Flamingo 3 from 17.40% to 65.20% on VoxParadox, and from 37.74% to 54.78% on MMSU paralinguistic subset.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Findings</h2>
+    <div class="content">
+      <ul>
+        <li>Current Audio LLMs often prioritize speech semantics over acoustics.</li>
+        <li>Paralinguistic signals (for example, prosody and delivery style) are frequently underutilized.</li>
+        <li>Performance can degrade when semantic shortcuts are weakened and acoustic grounding is required.</li>
+        <li>VoxParadox identifies failure patterns and supports mitigation strategies for more robust audio reasoning.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="leaderboard">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">VoxParadox Leaderboard</h2>
+    <p class="has-text-centered leaderboard-subtitle">
+      Reported model performance on VoxParadox. Higher is better for Avg. VoxParadox and MMSU Para; lower is better for Adv. label.
+    </p>
+    <div class="table-container">
+      <div class="leaderboard-card">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Model</th>
+              <th class="num">Avg. VoxParadox (%) ↑</th>
+              <th class="num">Adv. label (%) ↓</th>
+              <th class="num">MMSU Para. (%) ↑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ours">
+              <td class="num">1</td>
+              <td>Audio Flamingo 3 + PCLM + DPO (Ours)</td>
+              <td class="num">65.20</td>
+              <td class="num">22.60</td>
+              <td class="num">54.78</td>
+            </tr>
+            <tr class="ours">
+              <td class="num">2</td>
+              <td>Audio Flamingo 3 + PCLM (Ours)</td>
+              <td class="num">60.00</td>
+              <td class="num">26.30</td>
+              <td class="num">54.06</td>
+            </tr>
+            <tr class="ours">
+              <td class="num">3</td>
+              <td>Audio Flamingo 3 + SFT (Ours)</td>
+              <td class="num">34.80</td>
+              <td class="num">-</td>
+              <td class="num">44.76</td>
+            </tr>
+            <tr>
+              <td class="num">4</td>
+              <td>Audio Flamingo 2 (AF2)</td>
+              <td class="num">30.85</td>
+              <td class="num">29.80</td>
+              <td class="num">27.44</td>
+            </tr>
+            <tr>
+              <td class="num">5</td>
+              <td>Qwen2-Audio</td>
+              <td class="num">30.15</td>
+              <td class="num">27.20</td>
+              <td class="num">20.88</td>
+            </tr>
+            <tr>
+              <td class="num">6</td>
+              <td>Gemini 2.5 Flash</td>
+              <td class="num">24.70</td>
+              <td class="num">58.20</td>
+              <td class="num">51.05</td>
+            </tr>
+            <tr>
+              <td class="num">7</td>
+              <td>MiMo-Audio</td>
+              <td class="num">19.60</td>
+              <td class="num">65.42</td>
+              <td class="num">35.64</td>
+            </tr>
+            <tr>
+              <td class="num">8</td>
+              <td>Kimi-Audio</td>
+              <td class="num">19.00</td>
+              <td class="num">60.50</td>
+              <td class="num">41.48</td>
+            </tr>
+            <tr>
+              <td class="num">9</td>
+              <td>Step-Audio-R1</td>
+              <td class="num">17.45</td>
+              <td class="num">60.17</td>
+              <td class="num">54.51</td>
+            </tr>
+            <tr>
+              <td class="num">10</td>
+              <td>Audio Flamingo 3 (AF3)</td>
+              <td class="num">17.40</td>
+              <td class="num">68.50</td>
+              <td class="num">37.74</td>
+            </tr>
+            <tr>
+              <td class="num">11</td>
+              <td>GPT-4o Audio</td>
+              <td class="num">8.60</td>
+              <td class="num">77.80</td>
+              <td class="num">36.55</td>
+            </tr>
+            <tr>
+              <td class="num">12</td>
+              <td>Qwen2.5-Omni</td>
+              <td class="num">7.95</td>
+              <td class="num">73.67</td>
+              <td class="num">33.45</td>
+            </tr>
+            <tr>
+              <td class="num">13</td>
+              <td>VITA-Audio</td>
+              <td class="num">6.85</td>
+              <td class="num">72.75</td>
+              <td class="num">29.54</td>
+            </tr>
+            <tr>
+              <td class="num">14</td>
+              <td>SALMONN</td>
+              <td class="num">6.10</td>
+              <td class="num">26.50</td>
+              <td class="num">6.84</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="has-text-centered is-size-7 has-text-grey mt-3">
+      VoxParadox average is computed over 10 paralinguistic tasks: Age, Gender, Emotion, Pitch, Volume, Speed, Range, Intonation, Speaker ID, and Speaker Counting.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds has-text-centered">
+        <h2 class="title is-3">Project Resources</h2>
+        <div class="content">
+          <p>We are preparing the full project release.</p>
+          <ul style="text-align: left;">
+            <li><strong>Preprint:</strong> paper PDF and supplementary material.</li>
+            <li><strong>Benchmark:</strong> VoxParadox dataset, tasks, and evaluation scripts.</li>
+            <li><strong>Code:</strong> baseline implementations and mitigation methods.</li>
+          </ul>
+          <p>Please check back soon for release links.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{
+pang2026do,
+title={Do Audio {LLM}s Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox},
+author={Jiacheng Pang and Ashutosh Chaubey and Mohammad Soleymani},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
+url={https://openreview.net/forum?id=v7rYbRR9Zw}
+}</code></pre>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds has-text-centered">
+        <h2 class="title is-3">Contact</h2>
+        <div class="content">
+          <p>For questions or collaboration, please contact:</p>
+          <p><strong>Jiacheng Pang</strong> - <a href="mailto:pangj@usc.edu">pangj@usc.edu</a></p>
+          <p><strong>Ashutosh Chaubey</strong> - <a href="mailto:achaubey@usc.edu">achaubey@usc.edu</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Website adapted from
+            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+            <a href="https://avere-iclr.github.io/">AVERE</a>, and
+            <a href="https://mod-dpo.github.io/">MoD-DPO</a> project pages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
