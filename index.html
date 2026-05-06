@@ -147,6 +147,228 @@
   </div>
 </section>
 
+<section class="section" id="examples">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Try It Yourself</h2>
+    <p class="has-text-centered leaderboard-subtitle">
+      Play each clip and notice how the <em>audio</em> and the <em>transcript</em> point to different answers. The True Label reflects the audio; the Adversarial Label reflects what the transcript asserts.
+    </p>
+    <div class="table-container">
+      <div class="examples-card">
+        <table class="examples-table">
+          <thead>
+            <tr>
+              <th>Question &amp; Audio</th>
+              <th class="opt-col">Options</th>
+              <th class="lbl-col lbl-gt-col">True Label</th>
+              <th class="lbl-col lbl-adv-col">Adversarial Label</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>
+                <span class="example-task">Age prediction</span>
+                <p class="example-question">What is the most likely age group of the speaker in the audio?</p>
+                <audio controls preload="metadata" src="static/audio/age_prediction.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) Young adult</li>
+                  <li>B) Middle-aged adult</li>
+                  <li>C) Elderly adult</li>
+                  <li>D) Child</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">Elderly adult</td>
+              <td class="lbl-col lbl-adv-col">Young adult</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Gender prediction</span>
+                <p class="example-question">What is the speaker's gender?</p>
+                <audio controls preload="metadata" src="static/audio/gender_prediction.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) Female</li>
+                  <li>B) Male</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">Male</td>
+              <td class="lbl-col lbl-adv-col">Female</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Emotion recognition</span>
+                <p class="example-question">How does the speaker feel in the recording?</p>
+                <audio controls preload="metadata" src="static/audio/emotion_recognition.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) neutral</li>
+                  <li>B) sadness</li>
+                  <li>C) anger</li>
+                  <li>D) happiness</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">anger</td>
+              <td class="lbl-col lbl-adv-col">neutral</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Emotion recognition</span>
+                <p class="example-question">How does the speaker feel in the recording?</p>
+                <audio controls preload="metadata" src="static/audio/emotion_recognition2.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) neutral</li>
+                  <li>B) sadness</li>
+                  <li>C) anger</li>
+                  <li>D) happiness</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">sadness</td>
+              <td class="lbl-col lbl-adv-col">happiness</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Intonation perception</span>
+                <p class="example-question">What is the intonation of the entire sentence in the audio?</p>
+                <audio controls preload="metadata" src="static/audio/intonation_perception.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) Rise-fall intonation</li>
+                  <li>B) Falling intonation</li>
+                  <li>C) Fall-rise intonation</li>
+                  <li>D) Rising intonation</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">Falling intonation</td>
+              <td class="lbl-col lbl-adv-col">Rising intonation</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Total speaker counting</span>
+                <p class="example-question">How many different speakers are in the audio?</p>
+                <audio controls preload="metadata" src="static/audio/total_speaker_counting.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) 8 people</li>
+                  <li>B) 3 people</li>
+                  <li>C) 2 people</li>
+                  <li>D) 1 person</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">2 people</td>
+              <td class="lbl-col lbl-adv-col">1 person</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Speaker identity recognition</span>
+                <p class="example-question">Which speaker clip belongs to the same person as speaker clip 1?</p>
+                <audio controls preload="metadata" src="static/audio/speaker_identity_recognition.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) the second person</li>
+                  <li>B) the third person</li>
+                  <li>C) the fifth person</li>
+                  <li>D) the fourth person</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">the fourth person</td>
+              <td class="lbl-col lbl-adv-col">the second person</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Pitch comparison</span>
+                <p class="example-question">Which pitch pattern best matches the audio?</p>
+                <audio controls preload="metadata" src="static/audio/pitch_comparison.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) low-medium-high</li>
+                  <li>B) medium-high-low</li>
+                  <li>C) high-low-medium</li>
+                  <li>D) medium-low-high</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">high-low-medium</td>
+              <td class="lbl-col lbl-adv-col">low-medium-high</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Volume comparison</span>
+                <p class="example-question">Which volume pattern best matches the audio?</p>
+                <audio controls preload="metadata" src="static/audio/volume_comparison.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) low-high-medium</li>
+                  <li>B) high-medium-low</li>
+                  <li>C) medium-low-high</li>
+                  <li>D) low-medium-high</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">low-high-medium</td>
+              <td class="lbl-col lbl-adv-col">high-medium-low</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Speed comparison</span>
+                <p class="example-question">Which speed pattern best matches the audio?</p>
+                <audio controls preload="metadata" src="static/audio/speed_comparison.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) high-medium-low</li>
+                  <li>B) high-low-medium</li>
+                  <li>C) low-high-medium</li>
+                  <li>D) medium-low-high</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">high-low-medium</td>
+              <td class="lbl-col lbl-adv-col">low-high-medium</td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="example-task">Vocal range comparison</span>
+                <p class="example-question">Which vocal range pattern best matches the audio?</p>
+                <audio controls preload="metadata" src="static/audio/vocal_range_comparison.wav"></audio>
+              </td>
+              <td class="opt-col">
+                <ul class="example-choices">
+                  <li>A) high-medium-low</li>
+                  <li>B) low-medium-high</li>
+                  <li>C) high-low-medium</li>
+                  <li>D) medium-low-high</li>
+                </ul>
+              </td>
+              <td class="lbl-col lbl-gt-col">medium-low-high</td>
+              <td class="lbl-col lbl-adv-col">high-medium-low,<br>high-low-medium</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="leaderboard">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">VoxParadox Leaderboard</h2>

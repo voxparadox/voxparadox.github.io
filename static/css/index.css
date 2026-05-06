@@ -348,3 +348,106 @@ footer.footer a {
 footer.footer a:hover {
   text-decoration: underline;
 }
+
+/* ── Try-it-yourself examples ─────────────────────────── */
+.examples-card {
+  padding: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.examples-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.examples-table thead th {
+  background: #f4f6fb;
+  color: #1f2937;
+  padding: 0.78rem 0.9rem;
+  border-bottom: 2px solid var(--icml-blue-border);
+  font-weight: 700;
+  text-align: left;
+}
+
+.examples-table tbody td {
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid #eef0f4;
+  vertical-align: middle;
+}
+
+.examples-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.examples-table .lbl-col {
+  width: 15%;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.examples-table .opt-col {
+  width: 22%;
+  vertical-align: middle;
+}
+
+.examples-table .lbl-gt-col {
+  color: #047857;
+}
+
+.examples-table .lbl-adv-col {
+  color: #b45309;
+}
+
+.example-task {
+  display: inline-block;
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--icml-blue);
+  margin-bottom: 0.45rem;
+}
+
+.example-question {
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+  color: #1f2937;
+}
+
+.example-choices {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.example-choices li {
+  padding: 0.1rem 0;
+}
+
+.examples-table audio {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .examples-table .lbl-col,
+  .examples-table .opt-col {
+    width: auto;
+    white-space: normal;
+  }
+  .examples-table thead th,
+  .examples-table tbody td {
+    padding: 0.6rem 0.55rem;
+  }
+}
