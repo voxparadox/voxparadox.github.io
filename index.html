@@ -87,13 +87,17 @@
                 <span class="pub-icon"><i class="ai ai-arxiv" style="font-size: 1.2rem;"></i></span>
                 <span>Preprint (Coming Soon)</span>
               </span>
-              <span class="pub-btn pub-btn-benchmark disabled">
+              <a class="pub-btn pub-btn-benchmark" href="https://huggingface.co/datasets/IHP-Lab/VoxParadox" target="_blank" rel="noopener">
                 <span class="pub-icon"><i class="fas fa-database"></i></span>
-                <span>Benchmark (Coming Soon)</span>
-              </span>
-              <span class="pub-btn pub-btn-code disabled">
+                <span>Benchmark</span>
+              </a>
+              <a class="pub-btn pub-btn-code" href="https://github.com/ihp-lab/VoxParadox" target="_blank" rel="noopener">
                 <span class="pub-icon"><i class="fab fa-github" style="font-size: 1.1rem;"></i></span>
-                <span>Code (Coming Soon)</span>
+                <span>Code</span>
+              </a>
+              <span class="pub-btn pub-btn-model disabled">
+                <span class="pub-icon"><i class="fas fa-cube"></i></span>
+                <span>Models (Coming Soon)</span>
               </span>
             </div>
           </div>
@@ -107,7 +111,7 @@
   <div class="container is-max-desktop">
     <div class="teaser-box">
       <p class="is-size-5">
-        We evaluate modern Audio LLMs, including the AudioFlamingo series, Qwen-2-Audio, and Kimi Audio, to test whether they truly leverage acoustic cues or over-rely on semantics from speech content.
+        We evaluate modern Audio LLMs, including the AudioFlamingo series, Qwen2-Audio, Kimi Audio, etc., to test whether they truly leverage acoustic cues or over-rely on semantics from speech content for paralinguistic tasks.
       </p>
     </div>
   </div>
@@ -517,13 +521,12 @@
       <div class="column is-two-thirds has-text-centered">
         <h2 class="title is-3">Project Resources</h2>
         <div class="content">
-          <p>We are preparing the full project release.</p>
           <ul style="text-align: left;">
-            <li><strong>Preprint:</strong> paper PDF and supplementary material.</li>
-            <li><strong>Benchmark:</strong> VoxParadox dataset, tasks, and evaluation scripts.</li>
-            <li><strong>Code:</strong> baseline implementations and mitigation methods.</li>
+            <li><strong>Code:</strong> <a href="https://github.com/ihp-lab/VoxParadox" target="_blank" rel="noopener">github.com/ihp-lab/VoxParadox</a> &mdash; PCLM-enabled Audio Flamingo 3 and Qwen2-Audio, plus probing pipelines for CLAP and HuBERT.</li>
+            <li><strong>Benchmark:</strong> <a href="https://huggingface.co/datasets/IHP-Lab/VoxParadox" target="_blank" rel="noopener">huggingface.co/datasets/IHP-Lab/VoxParadox</a> &mdash; 2,000 adversarial MCQs across 10 paralinguistic tasks, with `eval.py` for scoring.</li>
+            <li><strong>Models:</strong> PCLM and PCLM+DPO checkpoints &mdash; <em>coming soon</em> on Hugging Face.</li>
+            <li><strong>Preprint:</strong> <em>coming soon</em>.</li>
           </ul>
-          <p>Please check back soon for release links.</p>
         </div>
       </div>
     </div>
