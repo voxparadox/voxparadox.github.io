@@ -248,6 +248,10 @@ body {
   background: linear-gradient(135deg, var(--icml-blue) 0%, #1a2f7e 100%);
 }
 
+.publication-links .pub-btn-model {
+  background: linear-gradient(135deg, #d68a00 0%, #a86d00 100%);
+}
+
 .publication-links .pub-btn.disabled {
   opacity: 0.78;
   cursor: not-allowed;
